@@ -13,6 +13,7 @@ private:
     vector<int> eList;          // List of edges enclosed
 
     int weight;                 // Total weight of edges enclosed
+    int subCount;               // Number of nodes below this node
 
     HybridNode* parent;
     HybridNode* leftChild;
@@ -20,8 +21,16 @@ private:
 
 public:
                     HybridNode();
-    void            changeId(int);
-    void            addVertexToBoundaryList(int);
+    // Writes
+    void            changeId(int, int);
+    void            addVertexToBoundaryList(vector<int>, vector<int>);
     void            updateWeight(int, int);
+    void            updateSubCount(int);
+    void            hasLeftChild(HybridNode*);
+    void            hasRightChild(HybridNode*);
+
+    // Reads
+    int             getId();
+    int             getSubCount();
     HybridNode*     findParent();
 };

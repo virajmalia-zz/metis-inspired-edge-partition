@@ -2,7 +2,7 @@
 
 using namespace std;
 
-HybridNode():
+HybridNode::HybridNode():
     id = NULL
     {}
 
@@ -38,6 +38,26 @@ void HybridNode::addVertexToBoundaryList(vector<int> list_l, vector<int> list_r)
 
 void HybridNode::updateWeight(int wt_l, int wt_r){
     this->weight = wt_l + wt_r;
+}
+
+void HybridNode::updateSubCount(int newCount){
+    this->subCount = newCount
+}
+
+void HybridNode::hasLeftChild(HybridNode::HybridNode* left){
+    this->leftChild = left;
+}
+
+void HybridNode::hasRightChild(HybridNode::HybridNode* right){
+    this->rightChild = right;
+}
+
+int HybridNode::getId(){
+    return stoi(this->id);
+}
+
+int HybridNode::getSubCount(){
+    return this->subCount;
 }
 
 HybridNode::HybridNode* HybridNode::findParent(){
